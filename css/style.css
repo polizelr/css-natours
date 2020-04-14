@@ -1,0 +1,31 @@
+/* simple reset using universal selector*/
+* {
+    /* by default, browsers apply margin or padding in the elements */
+    margin: 0;
+    padding: 0;
+    /*  content-box: only the content is included in total width and total height. padding, margin and border aren't included
+        border-box: content, padding and border are included in total height and total width, but margin isn't included */
+    box-sizing: border-box;
+}
+
+body{
+    /* properties related to font are usually inherited for all the child elements of the body */
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #777;
+    padding: 30px;
+}
+
+.header{
+    /* vh: viewport height */
+    height: 95vh;
+    background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.705), rgba(40, 180, 133, 0.705)), url(../img/hero.jpg);
+    /* cover: resize the background image to cover the entire container */
+    background-size: cover;
+    background-position: top;
+    /* clip-path creates a clipping region that sets whats parts of an element should be shown */
+    clip-path: polygon( 0 0, 100% 0, 100% 75vh, 0 100%);
+    
+}
