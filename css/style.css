@@ -26,6 +26,48 @@ body{
     background-size: cover;
     background-position: top;
     /* clip-path creates a clipping region that sets whats parts of an element should be shown */
-    clip-path: polygon( 0 0, 100% 0, 100% 75vh, 0 100%);
-    
+    clip-path: polygon( 0 0, 100% 0, 100% 75vh, 0 100%);    
+    position: relative;
+}
+
+.logo-box{
+    position: absolute;
+    /* the place (reference) from which we start to count 40 pixels to the left and 40 pixels from the top is the parent element 
+    which has its position set to relative*/
+    top: 40px;
+    left: 40px;
+}
+
+.logo{
+    height: 35px;
+}
+
+.text-box{
+    position: absolute;
+    top: 40%;
+    left: 50%;    
+    /* these 50% are no longer in relation to the parent element but of the element itself,
+    so -50% means it will be shifted half of the element width to the left side*/
+    transform: translate(-50%, -50%)
+}
+
+.heading-primary{
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.heading-primary-main{
+    /* display both as block level elements, because block elements occupy the entire width that they have available
+    and they create line breaks after and before them*/
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
+}
+
+.heading-primary-sub{
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 17.4px;
 }
