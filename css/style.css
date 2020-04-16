@@ -54,6 +54,8 @@ body{
 .heading-primary{
     color: #fff;
     text-transform: uppercase;
+    /* fix this little shaking in the animation: backface-visibility property determines if the back part of the element when we transform it is visible or hidden for the user */
+    backface-visibility: hidden;
 }
 
 .heading-primary-main{
@@ -63,6 +65,15 @@ body{
     font-size: 60px;
     font-weight: 400;
     letter-spacing: 35px;
+    animation-name: moveInLeft;
+    animation-duration: 1s;    
+    /* specifies how a CSS animation should progress over the duration of each cycle */
+    animation-timing-function: ease-out;
+
+    /* animation-delay: 3s; 
+       animation will happen three times 
+       animation-iteration-count: 3;    
+    */
 }
 
 .heading-primary-sub{
@@ -70,4 +81,43 @@ body{
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 17.4px;
+
+    /* animation-name: moveInRight;
+    animation-duration: 1s;
+    animation-timing-function: ease-out; */
+    animation: moveInRight 1s ease-out;
+}
+
+/*  Types of animations in CSS: first one is to use the transition property and then change the properties that you want to animate on an event like when we hover the element  
+    Second one: start by creating an animation that looks exactly like we want it to be, using @keyframes, and than apply it in an element using the properties animation-name 
+    and animation-duration
+*/
+@keyframes moveInLeft{
+    /* I can specify what I want to happen in each moment of time of the animation */
+    0% {
+        /* opacity and transform are the properties that browsers are optimized for */
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    80% {        
+        transform: translateX(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight{
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    80% {
+        transform: translateX(-10px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
