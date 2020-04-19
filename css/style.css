@@ -48,7 +48,9 @@ body{
     left: 50%;    
     /* these 50% are no longer in relation to the parent element but of the element itself,
     so -50% means it will be shifted half of the element width to the left side*/
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%);
+    /* this is an inline block element and so it's treated as if it was text */
+    text-align: center;
 }
 
 .heading-primary{
@@ -56,6 +58,7 @@ body{
     text-transform: uppercase;
     /* fix this little shaking in the animation: backface-visibility property determines if the back part of the element when we transform it is visible or hidden for the user */
     backface-visibility: hidden;
+    margin-bottom: 60px;
 }
 
 .heading-primary-main{
@@ -130,6 +133,16 @@ body{
     text-decoration: none;
     padding: 15px 40px;    
     display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+}
+
+.btn:hover{
+    transform: translateY(-3px);
+}
+
+.btn:active{
+    transform: translateY(1px);
 }
 
 .btn-white{
